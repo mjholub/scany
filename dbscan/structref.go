@@ -36,8 +36,7 @@ func (api *API) getColumnToFieldIndexMap(structType reflect.Type) map[string][]i
 				continue
 			}
 
-			index := make([]int, 0, len(traversal.IndexPrefix)+len(field.Index))
-			index = append(index, traversal.IndexPrefix...)
+			index := append([]int(nil), traversal.IndexPrefix...)
 			index = append(index, field.Index...)
 
 			columnPart := dbTag
